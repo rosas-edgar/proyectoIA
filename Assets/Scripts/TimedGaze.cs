@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TimedGaze : MonoBehaviour
 {
-    public bool identificado = false;
+    public GameObject textoIdentificado;
     public bool siendoObservado = false;
     //cuantos segundos debe ser observado 
     public float duracionTiempo = 3f;
@@ -14,7 +14,7 @@ public class TimedGaze : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        textoIdentificado.SetActive(false);
     }
 
     // Update is called once per frame
@@ -24,13 +24,14 @@ public class TimedGaze : MonoBehaviour
         {
             tiempoObservado += Time.deltaTime;
             if(tiempoObservado > duracionTiempo){
-                Debug.Log("Objeto identificado");
+                textoIdentificado.SetActive(true);
+                //Debug.Log("Objeto identificado");
             }
 
         }
         else{
             tiempoObservado = 0f;
-            Debug.Log("Objeto fuera de vista");
+            //Debug.Log("Objeto fuera de vista");
         }
         
     }
