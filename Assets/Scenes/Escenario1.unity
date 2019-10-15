@@ -132,6 +132,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: BirthdayCake
       objectReference: {fileID: 0}
+    - target: {fileID: 4224801822505238522, guid: e64901e87b1bd5a439882c091956a6bd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8274873701517981592, guid: e64901e87b1bd5a439882c091956a6bd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -7521214134985992077, guid: e64901e87b1bd5a439882c091956a6bd,
         type: 3}
       propertyPath: m_Enabled
@@ -216,16 +226,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Lightmapping
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4224801822505238522, guid: e64901e87b1bd5a439882c091956a6bd,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8274873701517981592, guid: e64901e87b1bd5a439882c091956a6bd,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e64901e87b1bd5a439882c091956a6bd, type: 3}
@@ -878,8 +878,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af82397669c1f344484d4cd02affa160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  estadoVR: 1
-  dispositivoVR: cardboard
+  estadoVR: 0
+  dispositivoVR: 
 --- !u!4 &1771995149
 Transform:
   m_ObjectHideFlags: 0

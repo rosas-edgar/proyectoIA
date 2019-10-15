@@ -8,7 +8,7 @@ public class RegistrarTiempo : MonoBehaviour
     public float tiempoMinimo = 5f;
     public float tiempoMaximo = 60f;
 
-    public static int ObtenerPuntuacion()
+    public int ObtenerPuntuacion()
     {
         tiempoObjetivo = Time.time;
         if(tiempoObjetivo <= tiempoMinimo){
