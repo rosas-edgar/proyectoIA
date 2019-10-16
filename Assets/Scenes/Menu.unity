@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 32476554}
   - component: {fileID: 32476553}
   - component: {fileID: 32476552}
-  - component: {fileID: 32476556}
+  - component: {fileID: 32476555}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -203,8 +203,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: LoadScenes
+      - m_Target: {fileID: 32476555}
+        m_MethodName: Escena
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -250,7 +250,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 32476550}
   m_CullTransparentMesh: 0
---- !u!114 &32476556
+--- !u!114 &32476555
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -259,11 +259,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 32476550}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af82397669c1f344484d4cd02affa160, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e2abde00fee6344995bdbc855fb7149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  estadoVR: 1
-  dispositivoVR: cardboard
 --- !u!1 &646459477
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,7 +493,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 9.64e-43, y: 1.02e-43, z: 2.17e-43, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: NaN, w: 8.4e-44}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -858,8 +856,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1342879108}
-        m_MethodName: ExitGame
+      - m_Target: {fileID: 11500000, guid: 6e2abde00fee6344995bdbc855fb7149, type: 3}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CargarEscena : MonoBehaviour
 {
-    public static void Escena(string nombreEscena)
+    public void Escena(string nombreEscena)
     {
         SceneManager.LoadScene(nombreEscena);
     }
