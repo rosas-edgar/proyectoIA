@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class IdentificarObjeto : MonoBehaviour
 {
     public Text textoIdentificado;
-    public RegistrarTiempo registrarTiempo = new RegistrarTiempo(5f, 20f);
+    public RegistrarTiempo registrarTiempo = new RegistrarTiempo(5f, 60f);
     private SeleccionarObjeto seleccionarObjeto = new SeleccionarObjeto(3f);
     private string nombreObjetoSeleccionado;
 
@@ -50,6 +51,7 @@ public class IdentificarObjeto : MonoBehaviour
             textoIdentificado.text = nombreObjetoSeleccionado + " ," 
             + registrarTiempo.ObtenerPuntuacion(Time.time).ToString() + ","
             + registrarTiempo.ObtenerTiempoObjetivo().ToString();
+            SceneManager.LoadScene("E1O3");
             //temporal
             enabled = false;
         }
