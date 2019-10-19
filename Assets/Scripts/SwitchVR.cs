@@ -5,9 +5,9 @@ using UnityEngine.XR;
 
 public class SwitchVR : MonoBehaviour
 {
-    public bool estadoVR;
+    public bool estadoVR = false;
     //vacio para deshabilitar, cardboard para habilitar
-    public string dispositivoVR;
+    public string dispositivoVR = "";
     IEnumerator LoadDevice(string newDevice, bool enable)
     {
         XRSettings.LoadDeviceByName(newDevice);
@@ -15,7 +15,7 @@ public class SwitchVR : MonoBehaviour
         XRSettings.enabled = enable;
     }
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         StartCoroutine(LoadDevice(dispositivoVR, estadoVR));
     }
