@@ -7,23 +7,27 @@ using UnityEngine.SceneManagement;
 public class IdentificarObjeto : MonoBehaviour
 {
     public Text textoIdentificado;
-    public RegistrarTiempo registrarTiempo = new RegistrarTiempo(5f, 60f);
-    private SeleccionarObjeto seleccionarObjeto = new SeleccionarObjeto(3f);
+    public string escenaSiguiente;
+    public string escenaPrevia;
+    public RegistrarTiempo registrarTiempo;
+    private SeleccionarObjeto seleccionarObjeto;
     private string nombreObjetoSeleccionado;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        registrarTiempo = new RegistrarTiempo(5f, 25f);
+        seleccionarObjeto = new SeleccionarObjeto(3f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(registrarTiempo.ExcedioTiempoMaximo(Time.time) && !seleccionarObjeto.Identificado())
+        if(registrarTiempo.ExcedioTiempoMaximo(Time.timeSinceLevelLoad) && !seleccionarObjeto.Identificado())
         {
             //regresar
             textoIdentificado.text = "Tiempo excedido";
+            SceneManager.LoadScene(escenaPrevia);
 
         }
         else{
@@ -49,9 +53,9 @@ public class IdentificarObjeto : MonoBehaviour
         if(seleccionarObjeto.Identificado())
         {
             textoIdentificado.text = nombreObjetoSeleccionado + " ," 
-            + registrarTiempo.ObtenerPuntuacion(Time.time).ToString() + ","
+            + registrarTiempo.ObtenerPuntuacion(Time.timeSinceLevelLoad).ToString() + ","
             + registrarTiempo.ObtenerTiempoObjetivo().ToString();
-            SceneManager.LoadScene("E1O3");
+            SceneManager.LoadScene(escenaSiguiente);
             //temporal
             enabled = false;
         }
