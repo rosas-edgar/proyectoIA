@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/E1O3.unity
     guid: 291c9cdc0f0d2fd4b98d2ef34b851584
+  - enabled: 1
+    path: Assets/Scenes/EscenarioRegistro.unity
+    guid: faa121d3279693241b2e43e61070c398
   m_configObjects: {}
