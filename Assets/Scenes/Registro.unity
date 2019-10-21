@@ -277,8 +277,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c704d9bccd4b742b54f678fdf1a397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  campo_nombre: {fileID: 1790931105}
-  campo_apellido: {fileID: 1581571784}
+  campo_nombre: {fileID: 867078464}
+  campo_apellido: {fileID: 518799435}
 --- !u!4 &498816615
 Transform:
   m_ObjectHideFlags: 0
