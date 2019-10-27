@@ -84,8 +84,8 @@ public class SqliteHelper
         // Insert values in table
 		IDbCommand cmnd = db_connection.CreateCommand();
 		cmnd.CommandText = "INSERT INTO Puntuacion (nombreNivel, idUsuario, tiempoNivel," +
-        " puntuacionNivel, fecha) VALUES ("+nombreNivel+", "+idUsuario+", "+tiempoNivel+", "+
-        puntuacionNivel+", "+fecha+")";
+        " puntuacionNivel, fecha) VALUES ('"+nombreNivel+"', '"+idUsuario+"', '"+tiempoNivel+"', '"+
+        puntuacionNivel+"', '"+fecha+"')";
 		cmnd.ExecuteNonQuery();
         close();
     }
@@ -100,7 +100,7 @@ public class SqliteHelper
         close();
     }
 
-    public List<Usuario> ObtenerUsuarios(string nombre){
+    public List<Usuario> ObtenerUsuarios(){
         db_connection.Open();
         List<Usuario> usuarios = new List<Usuario>();
 		IDbCommand cmnd_read = db_connection.CreateCommand();

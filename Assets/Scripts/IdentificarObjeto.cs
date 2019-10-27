@@ -52,9 +52,13 @@ public class IdentificarObjeto : MonoBehaviour
         seleccionarObjeto.ObjetoIdentificado(Time.deltaTime);
         if(seleccionarObjeto.Identificado())
         {
+            int puntuacion = registrarTiempo.ObtenerPuntuacion(Time.timeSinceLevelLoad);
+            double tiempoObj = registrarTiempo.ObtenerTiempoObjetivo();
             textoIdentificado.text = nombreObjetoSeleccionado + " ," 
-            + registrarTiempo.ObtenerPuntuacion(Time.timeSinceLevelLoad).ToString() + ","
-            + registrarTiempo.ObtenerTiempoObjetivo().ToString();
+            + puntuacion.ToString() + ","
+            + tiempoObj.ToString();
+            Puntuacion.puntuacionNivel = puntuacion;
+            Puntuacion.tiempoNivel += tiempoObj;
             SceneManager.LoadScene(escenaSiguiente);
             //temporal
             enabled = false;

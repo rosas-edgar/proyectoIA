@@ -13,9 +13,10 @@ public class RegistrarTiempo
         tiempoMaximo = tiempoMax;
     }
 
-    public float ObtenerTiempoObjetivo()
+    public double ObtenerTiempoObjetivo()
     {
-        return tiempoObjetivo;
+        double tiempo = tiempoObjetivo;
+        return System.Math.Round(tiempo, 2);
     }
 
     public int ObtenerPuntuacion(float tiempoObj)

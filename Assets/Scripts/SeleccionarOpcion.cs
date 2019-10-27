@@ -7,6 +7,7 @@ public class SeleccionarOpcion : MonoBehaviour
 {
     private SeleccionarObjeto seleccionarObjeto = new SeleccionarObjeto(1f);
     private string nombreObjetoSeleccionado;
+    private string nombreNivel = "";
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,10 @@ public class SeleccionarOpcion : MonoBehaviour
     void Update()
     {
         ObjetoIdentificado();
+    }
+    public void EstablecerNombreNivel(string nivel)
+    {
+        nombreNivel = nivel;
     }
     public void EstablecerObservado(bool observado)
     {
@@ -33,6 +38,9 @@ public class SeleccionarOpcion : MonoBehaviour
         seleccionarObjeto.ObjetoIdentificado(Time.deltaTime);
         if(seleccionarObjeto.Identificado())
         {
+            double tiempo = Time.timeSinceLevelLoad;
+            Puntuacion.tiempoNivel += System.Math.Round(tiempo, 2);
+            if (nombreNivel != "") RegistrarPuntuacion(nombreNivel);
             Escena(nombreObjetoSeleccionado);
             //temporal
             enabled = false;
@@ -46,5 +54,13 @@ public class SeleccionarOpcion : MonoBehaviour
     public void Escena(string nombreEscena)
     {
         SceneManager.LoadScene(nombreEscena);
+    }
+    public void RegistrarPuntuacion(string nivel)
+    {
+        SqliteHelper db = new SqliteHelper();
+        db.NuevaPuntuacion(nivel, Puntuacion.usuario.ObtenerID(), Puntuacion.tiempoNivel,
+            Puntuacion.puntuacionNivel, System.DateTime.Today.ToShortDateString());
+        Puntuacion.tiempoNivel = 0;
+        Puntuacion.puntuacionNivel = 0;
     }
 }
