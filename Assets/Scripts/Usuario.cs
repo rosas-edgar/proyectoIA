@@ -5,30 +5,33 @@ using System;
 public class Usuario
 {
     private int idUsuario;
-    private string nombreUsuario;
+    public string nombreUsuario { get; set; }
+    public string apellidoUsuario { get; set; }
 
     public Usuario(){
 
     }
 
-    public Usuario(int id, string nombre){
+    public Usuario(int id, string nombre, string apellido){
         idUsuario = id;
         nombreUsuario = nombre;
+        apellidoUsuario = apellido;
     }
 
     public void EstablecerIdUsuario(string id){
         idUsuario = Int32.Parse(id);
     }
 
-    public void EstablecerNombre(string nombre){
+    public void EstablecerNombres(string nombre, string apellido){
         nombreUsuario = nombre;
+        apellidoUsuario = apellido;
     }
 
     public int ObtenerID(){
         return idUsuario;
     }
-    public string ObtenerNombre(){
-        return nombreUsuario;
+    public string ObtenerNombres(){
+        return nombreUsuario + " " + apellidoUsuario;
     }
 
 }

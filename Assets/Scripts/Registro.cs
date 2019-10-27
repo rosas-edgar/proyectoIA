@@ -11,16 +11,18 @@ public class Registro : MonoBehaviour
     private SqliteHelper db;
 
     public string ObtenerNombre(){
-        return campo_nombre.text + " "+ campo_apellido.text;
+        return campo_nombre.text;
 
+    }
+    public string ObtenerApellido(){
+        return campo_apellido.text;
     }
     public void RegistrarUsuario(){
 
         string nombre = ObtenerNombre();
+        string apellido = ObtenerApellido();
         //db = new SqliteHelper();
-        db.NuevoUsuario(nombre);
-        Usuario u = db.ObtenerUsuario(6);
-        Debug.Log(u.ObtenerNombre());
+        db.NuevoUsuario(nombre, apellido);
         Debug.Log(ObtenerNombre());
     }
     // Start is called before the first frame update
