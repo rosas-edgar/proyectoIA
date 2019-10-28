@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Usuarios.unity
     guid: c57de46f7f4e70644bc9a4b3db5413d6
+  - enabled: 1
+    path: Assets/Scenes/HistorialPuntuaciones.unity
+    guid: 48d0f08ce0213234aa966381d2d80012
+  - enabled: 1
+    path: Assets/Scenes/CambioRV.unity
+    guid: d1dc45bcc052fdd4cadbb7e1a271c8e4
   m_configObjects: {}

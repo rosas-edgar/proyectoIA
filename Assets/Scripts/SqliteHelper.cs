@@ -120,4 +120,28 @@ public class SqliteHelper
         return usuarios;
 
     }
+    public List<PuntuacionRegistrada> ObtenerPuntuaciones()
+    {
+        db_connection.Open();
+        List<PuntuacionRegistrada> puntuaciones = new List<PuntuacionRegistrada>();
+        IDbCommand cmnd_read = db_connection.CreateCommand();
+        IDataReader reader;
+        string query = "SELECT  (nombreUsuario || ' ' || apellidoUsuario) AS Nombres, nombreNivel, tiempoNivel, puntuacionNivel, fecha " +
+            "FROM Puntuacion INNER JOIN Usuario ON Usuario.idUsuario = Puntuacion.idUsuario";
+        cmnd_read.CommandText = query;
+        reader = cmnd_read.ExecuteReader();
+        while (reader.Read())
+        {
+            PuntuacionRegistrada p = new PuntuacionRegistrada();
+            p.nombresUsuario = reader[0].ToString();
+            p.nombreNivel = reader[1].ToString();
+            p.tiempoNivel = System.Convert.ToDouble(reader[2].ToString());
+            p.puntuacionNivel = System.Convert.ToInt32(reader[3].ToString());
+            p.fecha = reader[4].ToString();
+            puntuaciones.Add(p);
+        }
+        close();
+        return puntuaciones;
+
+    }
 }

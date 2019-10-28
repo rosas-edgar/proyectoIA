@@ -10,11 +10,11 @@ public class MenuScene : MonoBehaviour
     private void Start()
     {
         fadeGroup = FindObjectOfType<CanvasGroup>();
-        fadeGroup.alpha = 1;
+        //fadeGroup.alpha = 1;
 
     }
 
     private void Update(){
-        fadeGroup.alpha = 1 - Time.timeSinceLevelLoad * fadeInSpeed;
+        //fadeGroup.alpha = 1 - Time.timeSinceLevelLoad * fadeInSpeed;
     }
 }

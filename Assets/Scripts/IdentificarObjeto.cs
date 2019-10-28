@@ -54,9 +54,6 @@ public class IdentificarObjeto : MonoBehaviour
         {
             int puntuacion = registrarTiempo.ObtenerPuntuacion(Time.timeSinceLevelLoad);
             double tiempoObj = registrarTiempo.ObtenerTiempoObjetivo();
-            textoIdentificado.text = nombreObjetoSeleccionado + " ," 
-            + puntuacion.ToString() + ","
-            + tiempoObj.ToString();
             Puntuacion.puntuacionNivel = puntuacion;
             Puntuacion.tiempoNivel += tiempoObj;
             SceneManager.LoadScene(escenaSiguiente);

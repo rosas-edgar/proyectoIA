@@ -1256,7 +1256,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2141764957}
-  - component: {fileID: 2141764956}
   - component: {fileID: 2141764955}
   m_Layer: 0
   m_Name: E1O1
@@ -1277,20 +1276,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eea6b1f1fdd5fd74ab0b9c7b60f9eb53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2141764956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2141764954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af82397669c1f344484d4cd02affa160, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  estadoVR: 1
-  dispositivoVR: cardboard
 --- !u!4 &2141764957
 Transform:
   m_ObjectHideFlags: 0

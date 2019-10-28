@@ -1,18 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class PuntuacionRegistrada : MonoBehaviour
+
+public class PuntuacionRegistrada
 {
-    // Start is called before the first frame update
-    void Start()
+    public string nombresUsuario { get; set; }
+    public string nombreNivel { get; set; }
+    public double tiempoNivel { get; set; }
+    public int puntuacionNivel { get; set; }
+    public string fecha { get; set; }
+
+    public string ObtenerDescripcion()
     {
-        
+        return nombresUsuario + " " + nombreNivel + " " + tiempoNivel.ToString() +
+            " " + puntuacionNivel.ToString() + " " + fecha;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
