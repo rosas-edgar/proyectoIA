@@ -90,7 +90,7 @@ public class SqliteHelper
         close();
     }
 
-    public void NuevoUsuario(string nombre, string apellido)
+    public bool NuevoUsuario(string nombre, string apellido)
     {
         db_connection.Open();
         // Insert values in table
@@ -98,6 +98,7 @@ public class SqliteHelper
 		cmnd.CommandText = "INSERT INTO Usuario(nombreUsuario, apellidoUsuario) VALUES ('"+nombre+"', '"+apellido+"')";
 		cmnd.ExecuteNonQuery();
         close();
+        return true;
     }
 
     public List<Usuario> ObtenerUsuarios(){
