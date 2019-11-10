@@ -7,6 +7,8 @@ public class Registro : MonoBehaviour
 {
     public InputField campo_nombre;
     public InputField campo_apellido;
+    public GameObject messageBox;
+    public GameObject btn_Continuar;
 
     private SqliteHelper db;
 
@@ -22,8 +24,13 @@ public class Registro : MonoBehaviour
         string nombre = ObtenerNombre();
         string apellido = ObtenerApellido();
         //db = new SqliteHelper();
+        //if (db.NuevoUsuario(nombre, apellido) == true)
+        //{
+        //}
         db.NuevoUsuario(nombre, apellido);
+
         Debug.Log(ObtenerNombre());
+
     }
     // Start is called before the first frame update
     void Start()
@@ -31,7 +38,7 @@ public class Registro : MonoBehaviour
         db = new SqliteHelper();
         db.CrearBD();
 
-
+        btn_Continuar = GetComponent<GameObject>();
     }
 
     // Update is called once per frame
