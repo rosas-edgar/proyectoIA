@@ -245,5 +245,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0934ecd9649ffd74f8d0ff5039c2d4cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiempoTransicion: 1.5
-  siguienteEscena: E1O1
+  tiempoTransicion: 2.5
+  siguienteEscena: E2O1

@@ -49,31 +49,36 @@ public class SolicitarPermiso : MonoBehaviour
     public void ObjetoIdentificado()
     {
         seleccionarObjeto.ObjetoIdentificado(Time.deltaTime);
-        Debug.Log(permiso + nombreObjetoSeleccionado);
+        Debug.Log(permiso + nombreObjetoSeleccionado + " Observando");
         if (seleccionarObjeto.Identificado())
         {
-            Debug.Log(permiso + nombreObjetoSeleccionado);
+            Debug.Log(permiso + nombreObjetoSeleccionado + "Identificado");
             if(nombreObjetoSeleccionado == "Permiso" && permiso == 2) //esta solcitando permiso por primera vez
             {
                 permiso = DecisionPermiso();
                 //mostrar algo que indique el estado del permiso
             }
-            else if(nombreObjetoSeleccionado == "Objeto" && permiso == 1) //ya tiene permiso
+
+            if(nombreObjetoSeleccionado == "Objeto" ) 
             {
-                int puntuacion = registrarTiempo.ObtenerPuntuacion(Time.timeSinceLevelLoad);
-                double tiempoObj = registrarTiempo.ObtenerTiempoObjetivo();
-                Puntuacion.puntuacionNivel = puntuacion;
-                Puntuacion.tiempoNivel += tiempoObj;
-                RegistrarPuntuacion("Nivel 2");
-                SceneManager.LoadScene(escenaSiguiente);
+                if(permiso == 1) //ya tiene permiso
+                {
+                    Debug.Log(permiso + nombreObjetoSeleccionado + "Con permiso");
+                    int puntuacion = registrarTiempo.ObtenerPuntuacion(Time.timeSinceLevelLoad);
+                    double tiempoObj = registrarTiempo.ObtenerTiempoObjetivo();
+                    Puntuacion.puntuacionNivel = puntuacion;
+                    Puntuacion.tiempoNivel += tiempoObj;
+                    RegistrarPuntuacion("Nivel 2");
+                    SceneManager.LoadScene(escenaSiguiente);
+                }
+                else if(permiso == 0 || permiso == 2) //no tiene permiso o no ha solicitado
+                {
+                    Debug.Log(permiso + nombreObjetoSeleccionado + "Sin permiso");
+                    //tocar audio de que debe pedir permiso antes
+                    SceneManager.LoadScene(escenaPrevia);
+                }
             }
-            else if(nombreObjetoSeleccionado == "Objeto" && permiso == 0) //no tiene permiso
-            {
-                //tocar audio de que debe pedir permiso antes
-                SceneManager.LoadScene(escenaPrevia);
-            }
-            //temporal
-            enabled = false;
+
         }
         else
         {
