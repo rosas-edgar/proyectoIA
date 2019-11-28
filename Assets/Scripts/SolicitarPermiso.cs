@@ -106,11 +106,11 @@ public class SolicitarPermiso : MonoBehaviour
                 }
                 else if (permiso == 1) //ya tiene permiso, tocar audio de nuevo?
                 {
-
+                    objSi.GetComponent<AudioSource>().Play();
                 }
                 else if (permiso == 0) //no tiene permiso, tocar audio de nuevo?
                 {
-
+                    objNo.GetComponent<AudioSource>().Play();
                 }
 
             }
