@@ -73,7 +73,6 @@ public class SolicitarPermiso : MonoBehaviour
                 }
                 else if(permiso == 0) //no tiene permiso
                 {
-                    Debug.Log(permiso + nombreObjetoSeleccionado + "Sin permiso");
                     //tocar audio de que debe pedir permiso antes
                     
                 }
@@ -87,7 +86,6 @@ public class SolicitarPermiso : MonoBehaviour
                 }
                 else if (permiso == 0) //no tiene permiso
                 {
-                    Debug.Log(permiso +" "+ nombreObjetoSeleccionado + " Sin permiso");
                     Puntuacion.puntuacionNivel += 5;
                     FinConPermiso();
 
@@ -126,18 +124,22 @@ public class SolicitarPermiso : MonoBehaviour
                 }
                 else if (permiso == 2) //no ha solicitado permiso
                 {
-                    VisibilidadObjeto(true, "Pedir");
+                    VisibilidadObjeto(true, objPedir);
                 }
             }
             else if (nombreObjetoSeleccionado == "Carreola")
             {
                 if (permiso == 1) //ya tiene permiso
                 {
-                    VisibilidadObjeto(true, "TomarONoTomar");
+                    VisibilidadObjeto(true, objTomar);
+                    VisibilidadObjeto(true, objNoTomar);
                 }
                 else if (permiso == 0) //no tiene permiso
                 {
                     //audio de recordar pedir permiso
+                    objNo.GetComponent<AudioSource>().Play();
+                    VisibilidadObjeto(true, objTomar);
+                    VisibilidadObjeto(true, objNoTomar);
                 }
                 else if (permiso == 2) //no ha solicitado permiso
                 {
@@ -150,7 +152,6 @@ public class SolicitarPermiso : MonoBehaviour
 
     private void FinConPermiso()
     {
-        Debug.Log(permiso + nombreObjetoSeleccionado + "Con permiso");
         int puntuacion = registrarTiempo.ObtenerPuntuacion(Time.timeSinceLevelLoad);
         double tiempoObj = registrarTiempo.ObtenerTiempoObjetivo();
         Puntuacion.puntuacionNivel += puntuacion;
@@ -162,14 +163,14 @@ public class SolicitarPermiso : MonoBehaviour
     private int DecisionPermiso()
     {
         int r = Random.Range(0, 100);
-        if (r > 30)
+        if (r > 35)
         {
-            VisibilidadObjeto(true, "Si");
+            VisibilidadObjeto(true, objSi);
             return 1; //si permiso 
         }
         else
         {
-            VisibilidadObjeto(true, "No");
+            VisibilidadObjeto(true, objNo);
             return 0; //no
         }
             
@@ -183,24 +184,9 @@ public class SolicitarPermiso : MonoBehaviour
         Puntuacion.puntuacionNivel = 0;
     }
 
-    public void VisibilidadObjeto(bool visible, string nombre)
+    public void VisibilidadObjeto(bool visible, GameObject objeto)
     {
-        if (nombre == "Pedir")
-        {
-            objPedir.GetComponent<Renderer>().enabled = visible;
-        }
-        else if (nombre == "Si")
-        {
-            objSi.GetComponent<Renderer>().enabled = visible;
-        }
-        else if (nombre == "No")
-        {
-            objNo.GetComponent<Renderer>().enabled = visible;
-        }
-        else if (nombre == "TomarONoTomar")
-        {
-            objTomar.GetComponent<Renderer>().enabled = visible;
-            objNoTomar.GetComponent<Renderer>().enabled = visible;
-        }
+
+        objeto.SetActive(visible);
     }
 }
