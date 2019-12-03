@@ -6,7 +6,7 @@ public class CameraPortrait : MonoBehaviour
 {
     // Start is called before the first frame update
     public bool landscape = false;
-    void Start()
+    void Awake()
     {
         if (landscape)
         {

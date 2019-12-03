@@ -38,4 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CambioRV.unity
     guid: d1dc45bcc052fdd4cadbb7e1a271c8e4
+  - enabled: 1
+    path: Assets/Scenes/SeleccionarNivel.unity
+    guid: 70ac3711a578a214cbc72af434b14236
   m_configObjects: {}

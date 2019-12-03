@@ -468,7 +468,7 @@ PrefabInstance:
     - target: {fileID: 3361431857658589657, guid: c652663193dc2764e967d1fbc08a67e4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: CambioRV
+      value: SeleccionarNivel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c652663193dc2764e967d1fbc08a67e4, type: 3}

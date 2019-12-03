@@ -7,7 +7,16 @@ public class CargarEscena : MonoBehaviour
 {
     public void Escena(string nombreEscena)
     {
-        SceneManager.LoadScene(nombreEscena);
+        if (nombreEscena == "E1O1" || nombreEscena == "E2O1")
+        {
+            TiempoTransicion.siguienteEscena = nombreEscena;
+            SceneManager.LoadScene("CambioRV");
+        }
+        else
+        {
+            SceneManager.LoadScene(nombreEscena);
+        }
+        
     }
 
 }

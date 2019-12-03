@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class TiempoTransicion : MonoBehaviour
 {
     public float tiempoTransicion = 1.5f;
-    public string siguienteEscena = "";
+    public static string siguienteEscena = "";
     // Start is called before the first frame update
     void Start()
     {
