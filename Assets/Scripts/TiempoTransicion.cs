@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class TiempoTransicion : MonoBehaviour
 {
     public float tiempoTransicion = 1.5f;
+    public bool observado;
     public static string siguienteEscena = "";
     // Start is called before the first frame update
     void Start()
@@ -13,10 +14,15 @@ public class TiempoTransicion : MonoBehaviour
         
     }
 
+    public void Observado(bool estado)
+    {
+        observado = estado;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if(Time.timeSinceLevelLoad > tiempoTransicion)
+        if(Time.timeSinceLevelLoad > tiempoTransicion && observado)
         {
             SceneManager.LoadScene(siguienteEscena);
         }

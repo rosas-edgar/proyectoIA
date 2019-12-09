@@ -1335,9 +1335,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1995022517}
-  - component: {fileID: 1995022516}
-  - component: {fileID: 1995022519}
   - component: {fileID: 1995022518}
+  - component: {fileID: 1995022519}
+  - component: {fileID: 1995022516}
   m_Layer: 0
   m_Name: MenuScene
   m_TagString: Untagged
